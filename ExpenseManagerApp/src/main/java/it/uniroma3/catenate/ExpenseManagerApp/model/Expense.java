@@ -23,6 +23,10 @@ import javax.persistence.Version;
 @Table(name = "expense")
 public class Expense implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6619036561404422082L;
 	private Long id;
 	private Integer quantity;
 	private Money unitAmount;
@@ -151,6 +155,38 @@ public class Expense implements java.io.Serializable {
 
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((event == null) ? 0 : event.hashCode());
+		result = prime * result
+				+ ((subCategory == null) ? 0 : subCategory.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Expense other = (Expense) obj;
+		if (event == null) {
+			if (other.event != null)
+				return false;
+		} else if (!event.equals(other.event))
+			return false;
+		if (subCategory == null) {
+			if (other.subCategory != null)
+				return false;
+		} else if (!subCategory.equals(other.subCategory))
+			return false;
+		return true;
 	}
 
 }

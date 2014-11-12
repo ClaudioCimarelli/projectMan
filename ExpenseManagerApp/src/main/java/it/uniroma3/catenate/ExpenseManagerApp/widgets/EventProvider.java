@@ -2,11 +2,19 @@ package it.uniroma3.catenate.ExpenseManagerApp.widgets;
 
 
 
-import it.uniroma3.catenate.ExpenseManagerApp.model.*;
+
+
+import it.uniroma3.catenate.ExpenseManagerApp.data.EventHome;
+import it.uniroma3.catenate.ExpenseManagerApp.model.Event;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+
+
+
+
 
 
 

@@ -28,9 +28,14 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "event")
 @NamedQueries({ @NamedQuery(name = "findAll", query = "SELECT e FROM Event e"),
-		@NamedQuery(name = "findBetweenDates", query = "SELECT e FROM Event e WHERE e.date BETWEEN :lowerDater AND :higherDater") })
+		@NamedQuery(name = "findBetweenDates", query = "SELECT e FROM Event e WHERE e.date BETWEEN :lowerDater AND :higherDater"),
+		@NamedQuery(name = "findByDate", query = "SELECT e FROM Event e WHERE e.date=:date")})
 public class Event implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3786553452491893586L;
 	private Long id;
 	private Set<Location> rentedLocations = new HashSet<Location>(0);
 	private Organization organization;
